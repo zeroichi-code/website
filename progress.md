@@ -21,8 +21,13 @@
 - デプロイ未実施
 
 ### 次回のタスク
-- TOOLSボタン 4番のURL設定
-- デプロイ（GitHub Pages）
+- TOOLSボタン 4番のURL・名前・説明文の設定
+- XプロフィールにURL（https://zeroichi-code.github.io/website/）を貼り付け
+
+### デプロイ情報
+- URL: https://zeroichi-code.github.io/website/
+- GitHub: https://github.com/zeroichi-code/website
+- 更新方法: index.html を編集 → git add / commit / push → 自動反映
 
 ### アカウント情報
 - GitHub: あり
