@@ -22,7 +22,6 @@
 
 ### 次回のタスク
 - TOOLSボタン 4番のURL・名前・説明文の設定
-- XプロフィールにURL（https://zeroichi-code.github.io/website/）を貼り付け
 
 ### デプロイ情報
 - URL: https://zeroichi-code.github.io/website/
