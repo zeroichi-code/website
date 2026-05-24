@@ -1,5 +1,18 @@
 # Progress
 
+## 2026-05-24 (2)
+
+### 実施済み事項
+- CLAUDE.md に終了時Obsidian書き込みルールを追記
+- Obsidian Projects/website.md を新規作成
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- TOOLSボタン4番のみ未設定
+
+### 次回のタスク
+- TOOLSボタン4番のURL・名前・説明文の設定
+
 ## 2026-05-24
 
 ### 実施済み事項
