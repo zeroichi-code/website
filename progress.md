@@ -1,5 +1,18 @@
 # Progress
 
+## 2026-05-24
+
+### 実施済み事項
+- NOTE.LOGに05.22記事を追加、シフト更新
+- GitHub Pagesに反映済み
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- TOOLSボタン4番のみ未設定
+
+### 次回のタスク
+- TOOLSボタン4番のURL・名前・説明文の設定
+
 ## 2026-05-12
 
 ### 実施済み事項
