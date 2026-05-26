@@ -1,5 +1,20 @@
 # Progress
 
+## 2026-05-27
+
+### 実施済み事項
+- Microsoft Clarity（ヒートマップ・クリック計測）を導入・push済み
+- データ蓄積に1〜2日かかる
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- TOOLSボタン4番のみ未設定
+- Clarity: データ蓄積待ち
+
+### 次回のタスク
+- TOOLSボタン4番のURL・名前・説明文の設定
+- Clarityのヒートマップ確認（1〜2日後）
+
 ## 2026-05-24 (2)
 
 ### 実施済み事項
