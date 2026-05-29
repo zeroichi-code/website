@@ -1,5 +1,18 @@
 # Progress
 
+## 2026-05-29
+
+### 実施済み事項
+- TOOLSボタン1番に「Token Usage」を追加（https://github.com/zeroichi-code/cc-checker）
+- 既存ツールを1つずつ下にシフト（4番の「ツール04」は削除）
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- TOOLSボタン4枠すべて埋まった
+
+### 次回のタスク
+- 特になし（NOTE.LOG更新は記事が出たら随時）
+
 ## 2026-05-27
 
 ### 実施済み事項
