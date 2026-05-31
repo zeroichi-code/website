@@ -1,5 +1,18 @@
 # Progress
 
+## 2026-05-31
+
+### 実施済み事項
+- Microsoft Clarityの確認方法を案内
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- Clarity: データ蓄積中（1〜2日で確認可能）
+
+### 次回のタスク
+- NOTE.LOG更新（記事が出たら随時）
+- Clarityのヒートマップ確認
+
 ## 2026-05-29
 
 ### 実施済み事項
