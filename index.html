@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>zeroichi-code</title>
+
+    <!-- Microsoft Clarity -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -11,23 +13,20 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "wxbmoycyfc");
     </script>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- React / ReactDOM (UMD globals) -->
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+
+    <!-- lucide-react (UMD global: window.lucideReact) -->
+    <script src="https://unpkg.com/lucide-react@0.460.0/dist/umd/lucide-react.min.js"></script>
+
+    <!-- Babel standalone (JSX transform) -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script>
-      Babel.registerPreset('react-classic', {
-        presets: [['react', { runtime: 'classic' }]]
-      });
-    </script>
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://esm.sh/react@18.3.1",
-          "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
-          "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-          "lucide-react": "https://esm.sh/lucide-react@0.460.0?deps=react@18.3.1&external=react"
-        }
-      }
-    </script>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
       html, body { margin: 0; background: #F5EDDA; font-family: 'Inter', sans-serif; }
@@ -36,13 +35,13 @@
   <body>
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module" data-presets="react-classic">
-      import React, { useEffect, useState } from "react";
-      import { createRoot } from "react-dom/client";
-      import {
+    <script type="text/babel" data-presets="react">
+      const { useState, useEffect } = React;
+      const { createRoot } = ReactDOM;
+      const {
         Smartphone, Calculator, FileText, Twitter, ExternalLink,
-        Cpu, Zap, Terminal, ChevronRight, ArrowUpRight,
-      } from "lucide-react";
+        Cpu, Zap, Terminal, ArrowUpRight,
+      } = lucideReact;
 
       /* ── カラーパレット ── */
       const C = {
@@ -62,19 +61,20 @@
         androidApp: {
           name: "エリオット波動、自動カウンティングAPP",
           desc: "Google Play で近日リリース予定",
+          status: "COMING SOON",
           href: "https://play.google.com/apps/testing/com.zeroichicode.fxelliottwave",
         },
         tools: [
-          { name: "Token Usage",             desc: "Claude Token使用量をリアルタイム表示", icon: Zap,        href: "https://github.com/zeroichi-code/cc-checker",                                           bg: C.yellow, fg: C.maroon },
-          { name: "楽天利益計算ツール",       desc: "せどりツール",                        icon: Calculator, href: "https://rakuten-searcher-capximdv9u43k4dkkmbtnc.streamlit.app/",                         bg: C.lime,   fg: C.maroon },
-          { name: "楽天ROOMオリ写自動生成",   desc: "時短ツール",                          icon: Cpu,        href: "https://drive.google.com/file/d/1GkGtXIW50fFxgmBYln4fb3sg-ZjzWVyb/view?usp=drive_link", bg: C.pink,   fg: C.maroon },
-          { name: "楽天ROOM 片思いリスト",    desc: "フォロワー管理ツール",                 icon: Terminal,   href: "https://drive.google.com/file/d/17acc3EH626jUYfXu-zIIIo9gH8cEOT1U/view?usp=drive_link",  bg: C.blue,   fg: C.cream  },
+          { name: "Token Usage",           desc: "Claude Token使用量をリアルタイム表示", icon: Zap,        href: "https://github.com/zeroichi-code/cc-checker",                                           bg: C.yellow, fg: C.maroon },
+          { name: "楽天利益計算ツール",     desc: "せどりツール",                        icon: Calculator, href: "https://rakuten-searcher-capximdv9u43k4dkkmbtnc.streamlit.app/",                         bg: C.lime,   fg: C.maroon },
+          { name: "楽天ROOMオリ写自動生成", desc: "時短ツール",                          icon: Cpu,        href: "https://drive.google.com/file/d/1GkGtXIW50fFxgmBYln4fb3sg-ZjzWVyb/view?usp=drive_link", bg: C.pink,   fg: C.maroon },
+          { name: "楽天ROOM 片思いリスト",  desc: "フォロワー管理ツール",                icon: Terminal,   href: "https://drive.google.com/file/d/17acc3EH626jUYfXu-zIIIo9gH8cEOT1U/view?usp=drive_link",  bg: C.blue,   fg: C.cream  },
         ],
         notes: [
-          { title: "終わったはずの『AI塗り絵本KDP』：ミクロニッチで稼ぐ全手順【2026年完全アップデート版】",                                              date: "05.22", href: "https://note.com/zeroichi_python/n/n9556e7a45b35" },
-          { title: "海外で売るNotionテンプレ＆AIプロンプト集：月3万円から月45万円まで、円安レバレッジで稼ぐ全手順",                                        date: "05.14", href: "https://note.com/zeroichi_python/n/neae154c5a61e?from=notice" },
-          { title: "【楽天ROOMツール配布】オリ写素材を簡単作成、コメント自動生成",                                                                       date: "04.30", href: "https://note.com/zeroichi_python/n/n5d35fb1a1cab" },
-          { title: "【せどりツール配布】楽天利益商品検索、「楽天もりもりの森」公開",                                                                     date: "04.26", href: "https://note.com/zeroichi_python/n/n425d1ec5dc46" },
+          { title: "終わったはずの『AI塗り絵本KDP』：ミクロニッチで稼ぐ全手順【2026年完全アップデート版】", date: "05.22", href: "https://note.com/zeroichi_python/n/n9556e7a45b35" },
+          { title: "海外で売るNotionテンプレ＆AIプロンプト集：月3万円から月45万円まで、円安レバレッジで稼ぐ全手順", date: "05.14", href: "https://note.com/zeroichi_python/n/neae154c5a61e?from=notice" },
+          { title: "【楽天ROOMツール配布】オリ写素材を簡単作成、コメント自動生成", date: "04.30", href: "https://note.com/zeroichi_python/n/n5d35fb1a1cab" },
+          { title: "【せどりツール配布】楽天利益商品検索、「楽天もりもりの森」公開", date: "04.26", href: "https://note.com/zeroichi_python/n/n425d1ec5dc46" },
         ],
         links: {
           x:    "https://x.com/zeroichi_code",
@@ -82,7 +82,6 @@
         },
       };
 
-      /* ── ステータスバー ── */
       function StatusBar() {
         const [time, setTime] = useState("");
         useEffect(() => {
@@ -103,7 +102,6 @@
         );
       }
 
-      /* ── メインコンポーネント ── */
       function ProfileSite() {
         return (
           <div style={{ background: C.cream }} className="min-h-screen flex items-start justify-center py-8 px-3">
@@ -117,7 +115,7 @@
 
               <StatusBar />
 
-              {/* ── HEADER ── */}
+              {/* HEADER */}
               <div style={{ background: C.maroon, color: C.cream }} className="px-5 pt-5 pb-6">
                 <div className="text-[10px] font-mono tracking-widest opacity-50 mb-1">ゼロイチ</div>
                 <h1 className="text-3xl font-black leading-none tracking-tight">
@@ -128,17 +126,14 @@
                 </p>
               </div>
 
-              {/* ── ANDROID APP CARD (メインディスプレイ) ── */}
+              {/* ANDROID APP CARD */}
               <a href={PROFILE.androidApp.href} target="_blank" rel="noreferrer"
-                className="block transition-opacity hover:opacity-90 active:opacity-75">
-                <div style={{ background: C.orange }} className="px-5 py-5 border-t-4" style={{ background: C.orange, borderColor: C.maroon, borderTopWidth: 4 }}>
+                className="block hover:opacity-90 active:opacity-75 transition-opacity">
+                <div style={{ background: C.orange, borderTop: `4px solid ${C.maroon}` }} className="px-5 py-5">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[9px] font-black tracking-[0.2em]"
-                      style={{ color: C.maroon }}>ANDROID APP</span>
+                    <span className="text-[9px] font-black tracking-[0.2em]" style={{ color: C.maroon }}>ANDROID APP</span>
                     <span className="text-[9px] font-black px-2 py-1 rounded-full animate-pulse"
-                      style={{ background: C.maroon, color: C.cream }}>
-                      ● COMING SOON
-                    </span>
+                      style={{ background: C.maroon, color: C.cream }}>● {PROFILE.androidApp.status}</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 shrink-0"
@@ -146,19 +141,15 @@
                       <img src="./icon.png" alt="app icon" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-black text-base leading-tight" style={{ color: C.maroon }}>
-                        {PROFILE.androidApp.name}
-                      </div>
-                      <div className="text-[11px] mt-0.5 font-medium opacity-70" style={{ color: C.maroon }}>
-                        {PROFILE.androidApp.desc}
-                      </div>
+                      <div className="font-black text-base leading-tight" style={{ color: C.maroon }}>{PROFILE.androidApp.name}</div>
+                      <div className="text-[11px] mt-0.5 font-medium opacity-70" style={{ color: C.maroon }}>{PROFILE.androidApp.desc}</div>
                     </div>
                     <ArrowUpRight className="w-5 h-5" style={{ color: C.maroon }} />
                   </div>
                 </div>
               </a>
 
-              {/* ── TOOLS ── */}
+              {/* TOOLS */}
               <div style={{ background: C.cream, borderTop: `4px solid ${C.maroon}` }} className="px-4 pt-4 pb-5">
                 <span className="text-[9px] font-black tracking-[0.2em] mb-3 block" style={{ color: C.maroon }}>TOOLS</span>
                 <div className="grid grid-cols-2 gap-3">
@@ -166,69 +157,52 @@
                     const Icon = t.icon;
                     return (
                       <a key={i} href={t.href} target="_blank" rel="noreferrer"
-                        className="block rounded-2xl border-2 p-4 transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
-                        style={{
-                          background: t.bg,
-                          borderColor: C.maroon,
-                          boxShadow: `3px 3px 0 ${C.maroon}`,
-                        }}>
+                        className="block rounded-2xl border-2 p-4 transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5"
+                        style={{ background: t.bg, borderColor: C.maroon, boxShadow: `3px 3px 0 ${C.maroon}` }}>
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="w-7 h-7 rounded-lg flex items-center justify-center border-2 shrink-0"
                             style={{ background: t.fg, borderColor: C.maroon }}>
                             <Icon className="w-3.5 h-3.5" style={{ color: t.bg }} />
                           </div>
-                          <div className="text-xs font-black leading-tight" style={{ color: t.fg }}>
-                            {t.name}
-                          </div>
+                          <div className="text-xs font-black leading-tight" style={{ color: t.fg }}>{t.name}</div>
                         </div>
-                        <div className="text-[10px] font-medium opacity-70" style={{ color: t.fg }}>
-                          {t.desc}
-                        </div>
+                        <div className="text-[10px] font-medium opacity-70" style={{ color: t.fg }}>{t.desc}</div>
                       </a>
                     );
                   })}
                 </div>
               </div>
 
-              {/* ── NOTE LOG ── */}
+              {/* NOTE LOG */}
               <div style={{ background: C.maroon, borderTop: `4px solid ${C.maroon}` }}>
                 <div className="px-5 pt-4 pb-1 flex items-center justify-between">
-                  <span className="text-[9px] font-black tracking-[0.2em]" style={{ color: C.lime }}>
-                    NOTE.LOG
-                  </span>
+                  <span className="text-[9px] font-black tracking-[0.2em]" style={{ color: C.lime }}>NOTE.LOG</span>
                   <span className="text-[9px] font-mono animate-pulse" style={{ color: C.lime }}>● live</span>
                 </div>
                 <div className="px-3 pb-4">
                   {PROFILE.notes.map((n, i) => (
                     <a key={i} href={n.href} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl my-1 transition-colors hover:opacity-80"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl my-1 hover:opacity-80 transition-opacity"
                       style={{ background: "rgba(245,237,218,0.07)" }}>
-                      <span className="text-[10px] font-mono shrink-0 opacity-50" style={{ color: C.cream }}>
-                        {n.date}
-                      </span>
-                      <span className="text-[12px] font-semibold flex-1 truncate" style={{ color: C.cream }}>
-                        {n.title}
-                      </span>
+                      <span className="text-[10px] font-mono shrink-0 opacity-50" style={{ color: C.cream }}>{n.date}</span>
+                      <span className="text-[12px] font-semibold flex-1 truncate" style={{ color: C.cream }}>{n.title}</span>
                       <ExternalLink className="w-3 h-3 shrink-0 opacity-40" style={{ color: C.cream }} />
                     </a>
                   ))}
                 </div>
               </div>
 
-              {/* ── SNS LINKS ── */}
-              <div style={{ background: C.cream, borderTop: `4px solid ${C.maroon}` }}
-                className="px-5 py-5 flex gap-3">
+              {/* SNS LINKS */}
+              <div style={{ background: C.cream, borderTop: `4px solid ${C.maroon}` }} className="px-5 py-5 flex gap-3">
                 <a href={PROFILE.links.x} target="_blank" rel="noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-black text-sm border-2 transition-transform hover:-translate-y-0.5 active:translate-y-0"
                   style={{ background: C.maroon, color: C.cream, borderColor: C.maroon, boxShadow: `3px 3px 0 ${C.orange}` }}>
-                  <Twitter className="w-4 h-4" />
-                  X
+                  <Twitter className="w-4 h-4" /> X
                 </a>
                 <a href={PROFILE.links.note} target="_blank" rel="noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-black text-sm border-2 transition-transform hover:-translate-y-0.5 active:translate-y-0"
                   style={{ background: C.cream, color: C.maroon, borderColor: C.maroon, boxShadow: `3px 3px 0 ${C.maroon}` }}>
-                  <FileText className="w-4 h-4" />
-                  note
+                  <FileText className="w-4 h-4" /> note
                 </a>
               </div>
 
@@ -237,7 +211,8 @@
                 className="text-center py-2.5 text-[10px] font-mono opacity-40 tracking-widest">
                 © {new Date().getFullYear()} zeroichi-code
                 <div className="mt-2">
-                  <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fzeroichi-code.github.io%2Fwebsite%2F&label=visitors&labelColor=%232b1507&countColor=%23F07A3A&style=flat" alt="visitor count" className="mx-auto" />
+                  <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fzeroichi-code.github.io%2Fwebsite%2F&label=visitors&labelColor=%232b1507&countColor=%23F07A3A&style=flat"
+                    alt="visitor count" className="mx-auto" />
                 </div>
               </div>
 
