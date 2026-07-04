@@ -13,6 +13,11 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+      Babel.registerPreset('react-classic', {
+        presets: [['react', { runtime: 'classic' }]]
+      });
+    </script>
     <script type="importmap">
       {
         "imports": {
@@ -31,8 +36,7 @@
   <body>
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module" data-presets="react" data-plugins="transform-react-jsx">
-      /* @jsxRuntime classic */
+    <script type="text/babel" data-type="module" data-presets="react-classic">
       import React, { useEffect, useState } from "react";
       import { createRoot } from "react-dom/client";
       import {
