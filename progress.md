@@ -1,5 +1,20 @@
 # Progress
 
+## 2026-07-04
+
+### 実施済み事項
+- 表示されない不具合を修正（Babel classic runtimeに切り替え、text/plain手動変換方式）
+- COMING SOONバッジ削除
+- Android AppのURLを正式リリース版に更新（Google Play Store）
+- 説明文を「Google Playで大好評リリース中」に変更
+
+### 現在のステータス
+- サイト公開中: https://zeroichi-code.github.io/website/
+- 全項目設定済み・正常表示確認済み
+
+### 次回のタスク
+- NOTE.LOG更新（記事が出たら随時）
+
 ## 2026-05-31
 
 ### 実施済み事項
