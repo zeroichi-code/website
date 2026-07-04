@@ -64,8 +64,7 @@
         androidApp: {
           name: "エリオット波動、自動カウンティングAPP",
           desc: "Google Play で近日リリース予定",
-          status: "COMING SOON",
-          href: "https://play.google.com/apps/testing/com.zeroichicode.fxelliottwave",
+          href: "https://play.google.com/store/apps/details?id=com.zeroichicode.fxelliottwave",
         },
         tools: [
           { name: "Token Usage",           desc: "Claude Token使用量をリアルタイム表示", Icon: IconZap,         href: "https://github.com/zeroichi-code/cc-checker",                                           bg: C.yellow, fg: C.maroon },
@@ -131,10 +130,8 @@
               <a href={PROFILE.androidApp.href} target="_blank" rel="noreferrer"
                 className="block hover:opacity-90 active:opacity-75 transition-opacity">
                 <div style={{ background: C.orange, borderTop: `4px solid ${C.maroon}` }} className="px-5 py-5">
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="mb-3">
                     <span className="text-[9px] font-black tracking-[0.2em]" style={{ color: C.maroon }}>ANDROID APP</span>
-                    <span className="text-[9px] font-black px-2 py-1 rounded-full animate-pulse"
-                      style={{ background: C.maroon, color: C.cream }}>● {PROFILE.androidApp.status}</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 shrink-0"
